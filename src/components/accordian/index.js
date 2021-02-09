@@ -50,5 +50,9 @@ Accordian.Header = function AccordianHeader({ children, ...restProps }) {
 
 Accordian.Body = function AccordianBody({ children, ...restProps }) {
   const { toggleShow } = useContext(ToggleContext);
-  return toggleShow ? <Body {...restProps}>{children}</Body> : null;
+  return (
+    <Body className={toggleShow ? "open" : "closed"} {...restProps}>
+      <span>{children}</span>
+    </Body>
+  );
 };
