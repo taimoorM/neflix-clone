@@ -3,7 +3,7 @@ import { Footer } from "../components";
 export function FooterContainer() {
   return (
     <Footer>
-      <Footer.Title>Questions? Contact us.</Footer.Title>
+      <Footer.Title>Questions? Call 1-844-542-4813</Footer.Title>
       <Footer.Break />
       <Footer.Row>
         <Footer.Column>
