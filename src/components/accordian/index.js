@@ -3,7 +3,6 @@ import {
   Container,
   Inner,
   Title,
-  Frame,
   Item,
   Header,
   Body,
@@ -23,10 +22,6 @@ Accordian.Title = function AccordianTitle({ children, ...restProps }) {
   return <Title {...restProps}>{children}</Title>;
 };
 
-Accordian.Frame = function AccordianFrame({ children, ...restProps }) {
-  return <Frame {...restProps}>{children}</Frame>;
-};
-
 Accordian.Item = function AccordianItem({ children, ...restProps }) {
   const [toggleShow, setToggleShow] = useState(false);
   return (
@@ -44,6 +39,11 @@ Accordian.Header = function AccordianHeader({ children, ...restProps }) {
       {...restProps}
     >
       {children}
+      {toggleShow ? (
+        <img src="/images/icons/close-slim.png" alt="Close" />
+      ) : (
+        <img src="/images/icons/add.png" alt="Open" />
+      )}
     </Header>
   );
 };
