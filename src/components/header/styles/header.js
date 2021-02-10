@@ -46,15 +46,18 @@ export const Logo = styled.img`
 `;
 
 export const ButtonLink = styled(ReactRouterLink)`
+  background-color: #e50914;
+  line-height: normal;
+  padding: 7px 17px;
+  font-weight: 400;
+  font-size: 1rem;
   display: block;
   background-color: #e50914;
   width: 84px;
   height: fit-content;
   color: white;
   border: 0;
-  font-size: 15px;
   border-radius: 3px;
-  padding: 8px 17px;
   cursor: pointer;
   text-decoration: none;
   &:hover {
