@@ -1,4 +1,4 @@
-import { OptForm } from "../components/";
+import { Feature, OptForm } from "../components/";
 import { HeaderContainer } from "../containers/header";
 import { JumbotronContainer } from "../containers/jumbotron";
 import { FaqsContainer } from "../containers/faq";
@@ -10,7 +10,7 @@ export default function Home() {
       <HeaderContainer>
         <Feature>
           <Feature.Title>Unlimited movies, TV shows, and more.</Feature.Title>
-          <Feature.Subtitle>Watch anywhere. Cancel anytime.</Feature.Subtitle>
+          <Feature.SubTitle>Watch anywhere. Cancel anytime.</Feature.SubTitle>
         </Feature>
         <OptForm>
           <OptForm.Text>
