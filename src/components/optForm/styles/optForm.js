@@ -13,8 +13,7 @@ export const Container = styled.div`
 `;
 
 export const Input = styled.input`
-  max-width: 450px;
-  min-width: 447px;
+  width: 450px;
   border: 0;
   padding: 10px;
   height: 70px;
