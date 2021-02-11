@@ -1,3 +1,11 @@
+import { FooterContainer } from "../containers/footer";
+import { HeaderContainer } from "../containers/header";
+
 export default function Login() {
-  return <p>Hey this is the login page!</p>;
+  return (
+    <>
+      <HeaderContainer>Hey this is the login page!</HeaderContainer>
+      <FooterContainer />
+    </>
+  );
 }
