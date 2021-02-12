@@ -23,13 +23,18 @@ export default function Signup() {
     //firebase auth
     firebase
       .auth()
-      .signInWithEmailAndPassword(email, password)
-      .then(() => {
-        //Go to browse page
-        history.push(ROUTES.BROWSE);
+      .createUserWithEmailAndPassword(email, password)
+      .then((result) => {
+        result.user
+          .updateProfile({
+            displayName: firstName,
+            photoURL: Math.floor(Math.random() * 5) + 1,
+          })
+          .then(() => {
+            history.push(ROUTES.BROWSE);
+          });
       })
       .catch((e) => {
-        setEmail("");
         setPassword("");
         setError(e.message);
       });
@@ -46,7 +51,7 @@ export default function Signup() {
               placeholder="First name"
               type="text"
               value={firstName}
-              onChange={({ target }) => setEmail(target.value)}
+              onChange={({ target }) => setFirstName(target.value)}
             />
             <Form.Input
               placeholder="Email address"
@@ -65,7 +70,8 @@ export default function Signup() {
             </Form.Submit>
           </Form.Base>
           <Form.Text>
-            Already a user? <Form.Link to={ROUTES.LOGIN}>Sign In</Form.Link>
+            Already a user?{" "}
+            <Form.Link to={ROUTES.LOGIN}>Sign in now.</Form.Link>
           </Form.Text>
           <Form.TextSmall>
             This page is protected by Google reCAPTCHA to ensure you're not a
