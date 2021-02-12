@@ -1,9 +1,11 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
+import { FirebaseContext } from "../context/firebase";
 import { FooterContainer } from "../containers/footer";
 import { HeaderContainer } from "../containers/header";
 import { Form } from "../components";
 
 export default function Login() {
+  const { firebase } = useContext(FirebaseContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -13,6 +15,19 @@ export default function Login() {
   //handle Sign in
   const handleSubmit = (e) => {
     e.preventDefault();
+
+    //firebase auth
+    firebase
+      .auth()
+      .signInWithEmailAndPassword(email, password)
+      .then(() => {
+        //Go to browse page
+      })
+      .catch((e) => {
+        setEmail("");
+        setPassword("");
+        setError(e.message);
+      });
   };
 
   return (
